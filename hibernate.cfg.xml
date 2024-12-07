@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"  
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">  
+
+<hibernate-configuration>
+   <session-factory>
+      <!-- Database connection settings -->
+      <property name="hibernate.archive.autodetection">class</property>
+      <property name="hibernate.ejb.packagesToScan">com.klef.jfsd.exam</property>
+      
+      <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+      <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/labexam</property>
+      <property name="hibernate.connection.username">root</property>
+      <property name="hibernate.connection.password">Princess@4405</property>
+      
+      <!-- MySQL Dialect -->
+      <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+      <!-- Enable automatic session context management -->
+      <property name="hibernate.current_session_context_class">thread</property>
+
+      <!-- Update schema at startup (use "validate" or "none" in production) -->
+      <property name="hibernate.hbm2ddl.auto">update</property>
+
+      <!-- Show SQL in console -->
+      <property name="hibernate.show_sql">true</property>
+      <property name="hibernate.format_sql">true</property>
+      <property name="hibernate.use_sql_comments">true</property>
+
+      <!-- Mapped classes -->
+      <mapping class="com.klef.jfsd.exam.Client"/>
+      <mapping class="com.klef.jfsd.exam.ClientDemo"/>
+  
+   </session-factory>
+</hibernate-configuration>
